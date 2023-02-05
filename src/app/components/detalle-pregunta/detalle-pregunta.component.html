@@ -1,0 +1,50 @@
+<div class="container m-2">
+    <h3>Editor de preguntas</h3>
+
+    <div *ngIf="pregre">
+        <h2>ID {{pregre.id}} editor de detalles</h2>
+
+        <div class="mb-2 row">
+            <div class="col-sm-2">id:</div>
+            <div class="col-sm-10">{{pregre.id}}</div>
+        </div>
+
+        <div>
+            <div class="mb-2 row">
+                <label for="inputSeccion" class="col-sm-2 col-form-label">Sección:</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]="pregre.seccion" class="form-control" id="inputSeccion" #ctrl="ngModel" required/>
+                </div>
+            </div>
+
+            <div class="mb-2 row">
+                <label for="inputEsTitulo" class="col-sm-2">¿Es título?</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" [(ngModel)]="pregre.esTitulo" id="inputEsTitulo"/>
+                </div>
+            </div>
+
+            <div class="mb-2 row">
+                <label for="inputTitulo" class="col-sm-2 col-form-label">Título (si lo fuera):</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]="pregre.titulo" class="form-control" id="inputTitulo"/>
+                </div>
+            </div>
+
+            <div class="mb-2 row">
+                <label for="inputPregunta" class="col-sm-2 col-form-label">Pregunta (si lo fuera):</label>
+                <div class="col-sm-10">
+                    <textarea [(ngModel)]="pregre.pregunta" class="form-control" id="inputPregunta" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="mb-2 row">
+                <label for="inputRespuesta" class="col-sm-2 col-form-label">Respuesta (en caso de ser Pregunta):</label>
+                <div class="col-sm-10">
+                    <textarea [(ngModel)]="pregre.respuesta" class="form-control" id="inputRespuesta" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

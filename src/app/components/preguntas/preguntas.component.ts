@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregre } from 'src/app/pregres';
-import { PREGRES } from 'src/app/mock-pregres';
+import { PregreService } from 'src/app/services/pregre.service';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-preguntas',
@@ -9,15 +10,22 @@ import { PREGRES } from 'src/app/mock-pregres';
 })
 export class PreguntasComponent implements OnInit {
 
-  pregres = PREGRES;
   selectedPregre!: Pregre;
+  pregres: Pregre[] = [];
 
-  constructor() { }
+  constructor(private pregreService: PregreService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.getPregres();
   }
 
   onSelect(pregre: Pregre): void {
     this.selectedPregre = pregre;
+    this.messageService.add(`PreguntasComponent: Selected pregre id=${pregre.id}`);
+  }
+
+  getPregres(): void {
+    this.pregreService.getPregres()
+        .subscribe((pregres:any) => this.pregres = pregres);
   }
 }
