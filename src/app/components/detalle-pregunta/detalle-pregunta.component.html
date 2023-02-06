@@ -1,8 +1,12 @@
 <div class="container m-2">
-    <h3>Editor de preguntas</h3>
 
-    <div *ngIf="pregre">
-        <h2>ID {{pregre.id}} editor de detalles</h2>
+    <div *ngIf="pregre" class="container">
+        <div class="row d-flex justify-content-between">
+            <h2 class="col">ID {{pregre.id}} editor de detalles</h2>
+            <div class="col-1">
+                <button type="button" class="btn btn-outline-secondary btn-sm" (click)="goBack()">Volver</button>
+            </div>
+        </div>
 
         <div class="mb-2 row">
             <div class="col-sm-2">id:</div>

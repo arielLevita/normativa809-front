@@ -8,6 +8,9 @@ import { DetallePreguntaComponent } from './components/detalle-pregunta/detalle-
 import { MessagesComponent } from './components/messages/messages.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './components/main/main.component';
+import { SeccionIngresoComponent } from './components/secciones/seccion-ingreso/seccion-ingreso.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,13 @@ import { MainComponent } from './components/main/main.component';
     DetallePreguntaComponent,
     MessagesComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    SeccionIngresoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

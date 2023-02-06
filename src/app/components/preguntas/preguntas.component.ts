@@ -10,18 +10,12 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class PreguntasComponent implements OnInit {
 
-  selectedPregre!: Pregre;
   pregres: Pregre[] = [];
 
   constructor(private pregreService: PregreService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getPregres();
-  }
-
-  onSelect(pregre: Pregre): void {
-    this.selectedPregre = pregre;
-    this.messageService.add(`PreguntasComponent: Selected pregre id=${pregre.id}`);
   }
 
   getPregres(): void {

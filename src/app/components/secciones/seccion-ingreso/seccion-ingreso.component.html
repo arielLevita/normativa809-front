@@ -1,0 +1,17 @@
+<h3>Algunas preguntas</h3>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="container" *ngFor="let pregre of pregres">
+        
+        <h3 class="mt-3 mb-2" *ngIf="pregre.esTitulo">{{pregre.titulo}}</h3>
+        <div class="accordion-item" *ngIf="!pregre.esTitulo">
+            <h2 class="accordion-header" [id]="'flush-heading'+pregre.id">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse'+pregre.id" aria-expanded="false" [attr.aria-controls]="'flush-collapse'+pregre.id">
+                {{pregre.pregunta}}
+                </button>
+            </h2>
+            <div [id]="'flush-collapse'+pregre.id" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-heading'+pregre.id" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">{{pregre.respuesta}}</div>
+            </div>
+        </div>
+    </div>
+</div>
