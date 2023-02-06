@@ -1,12 +1,11 @@
 <h2>Preguntas y Respuestas</h2>
-<ul>
-    <li *ngFor="let pregre of pregres" (click)="onSelect(pregre)">
-        <div><span>id: </span>{{pregre.id}}</div>
-        <div><span>sección: </span>{{pregre.seccion}}</div>
-        <div><span>esTitulo: </span>{{pregre.esTitulo}}</div>
-        <div><span>Título: </span>{{pregre.titulo}}</div>
-        <div><span>Pregunta: </span>{{pregre.pregunta}}</div>
-        <div><span>Respuesta: </span>{{pregre.respuesta}}</div>
+<ul class="list-group list-group-flush">
+    <li *ngFor="let pregre of pregres" (click)="onSelect(pregre)" class="list-group-item">
+        <div><span>// id: </span>{{pregre.id}}
+        <span> // sección: </span>{{pregre.seccion}}</div>
+        <div *ngIf="pregre.esTitulo"><span class="badge text-bg-secondary me-2">Título: </span>{{pregre.titulo}}</div>
+        <div *ngIf="!pregre.esTitulo"><span>Pregunta: </span>{{pregre.pregunta}}</div>
+        <div *ngIf="!pregre.esTitulo"><span>Respuesta: </span>{{pregre.respuesta}}</div>
     </li>
 </ul>
 
