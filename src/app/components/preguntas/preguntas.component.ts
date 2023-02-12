@@ -18,6 +18,10 @@ export class PreguntasComponent implements OnInit {
     this.getPregres();
   }
 
+  toggleAddPregre() {
+    console.log("toogleAddPregre");
+  }
+
   getPregres(): void {
     this.pregreService.getPregres()
         .subscribe((pregres:any) => this.pregres = pregres);

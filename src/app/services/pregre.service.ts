@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHandler } from '@angular/common/http'
 
 import { Pregre } from '../pregres';
 import { PREGRES } from '../mock-pregres';
@@ -10,6 +10,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class PregreService {
+  private apiUrl = 'http://localhost:5000/pregres'
 
   constructor(private messageService: MessageService) { }
 

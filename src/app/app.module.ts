@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PreguntasComponent } from './components/preguntas/preguntas.component';
@@ -9,8 +11,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './components/main/main.component';
 import { SeccionIngresoComponent } from './components/secciones/seccion-ingreso/seccion-ingreso.component';
+import { AddPregreButtonComponent } from './components/add-pregre-button/add-pregre-button.component';
 
-import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { AppRoutingModule } from './app-routing.module';
     MessagesComponent,
     SidebarComponent,
     MainComponent,
-    SeccionIngresoComponent
+    SeccionIngresoComponent,
+    AddPregreButtonComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

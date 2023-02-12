@@ -1,22 +1,48 @@
-<h2>Preguntas y Respuestas</h2>
+<header class="d-flex justify-content-between">
+  <h2>Preguntas y Respuestas</h2>
+  <app-add-pregre-button
+    text="Agregar Item"
+    (btnClick)="toggleAddPregre()"
+  ></app-add-pregre-button>
+</header>
 <ul class="list-group list-group-flush">
-    <li *ngFor="let pregre of pregres" class="list-group-item">
-        <!-- <div><span>// id: </span>{{pregre.id}}
+  <li *ngFor="let pregre of pregres" class="list-group-item">
+    <!-- <div><span>// id: </span>{{pregre.id}}
         <span> // sección: </span>{{pregre.seccion}}</div> -->
-        <div class="row d-flex justify-content-between">
-            <div class="col flex-grow-1">
-                <div *ngIf="pregre.esTitulo"><span class="badge text-bg-secondary me-2">Título: </span>{{pregre.titulo}}</div>
-                <div *ngIf="!pregre.esTitulo"><span class="badge text-bg-warning me-2">Pregunta: </span>{{pregre.pregunta}}</div>
-                <div *ngIf="!pregre.esTitulo"><span class="badge text-bg-danger me-2">Respuesta: </span>{{pregre.respuesta}}</div>
-            </div>
-            <div class="col-1 align-self-center">
-                <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-secondary"><a routerLink="/editar/{{pregre.id}}"><i class="bi bi-pencil"></i></a></button>
-                    <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                  </div>
-            </div>
+    <div class="row d-flex justify-content-between">
+      <div class="col flex-grow-1">
+        <div *ngIf="pregre.esTitulo">
+          <span class="badge text-bg-secondary me-2">Título: </span
+          >{{ pregre.titulo }}
         </div>
-    </li>
+        <div *ngIf="!pregre.esTitulo">
+          <span class="badge text-bg-primary me-2">Pregunta: </span
+          >{{ pregre.pregunta }}
+        </div>
+        <div *ngIf="!pregre.esTitulo">
+          <span class="badge text-bg-info me-2">Respuesta: </span
+          >{{ pregre.respuesta }}
+        </div>
+      </div>
+
+      <div class="col-1 d-flex align-self-center justify-content-end pe-0">
+        <div
+          class="btn-group btn-group-sm"
+          role="group"
+          aria-label="Basic outlined example"
+        >
+          <button type="button" class="btn btn-warning">
+            <a routerLink="/editar/{{ pregre.id }}"
+              ><i class="bi bi-pencil"></i
+            ></a>
+          </button>
+          <button type="button" class="btn btn-danger">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </li>
 </ul>
 
 <!-- <app-detalle-pregunta [pregre]="selectedPregre"></app-detalle-pregunta> -->
